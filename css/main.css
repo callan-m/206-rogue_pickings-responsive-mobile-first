@@ -14,10 +14,9 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 768px;
-	margin: 0 auto;
+	max-width: 1200px;
 	width: 90%;
-	flex-flow: column nowrap;
+	flex-flow: row wrap;
 }
 
 h1,
@@ -44,30 +43,34 @@ h4 {
 p {
 	font-size: .875em;
 	line-height: 21px;
-    padding: 0 30px;
 }
 
 /*The widths are in a percentage!*/
 header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: auto;
-	margin: 0 auto;
-	flex-flow: inherit;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		flex-flow: row wrap;
+		width: 100%;
 }
 
 header h1 {
+	font-size: 1.875em;
 	margin: 0;
-	padding: 38px 0;
+	padding: 38px 20px 20px 20px;
+  width: 100%;
+  text-align: center;
 	border-bottom: 3px solid #77a466;
+
 }
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	padding: 46px 0;
+	padding: 20px 0;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -77,8 +80,9 @@ header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: .875em;
-	padding: 0 10px;
+	padding: 15px 0;
 	list-style: none;
+	text-align: center;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -91,53 +95,32 @@ header nav ul li a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
-	flex-flow: column;
+	flex-flow: row wrap;
 }
 
-.main-image {
-	height: auto;
-}
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
+	border-top: 3px solid #77a466;
 }
 
-.main-title {
-	height: auto;
-
-}
 .main-title h3 {
 	text-align: left;
 	padding: 5px 0;
 	color: #77a466;
+	font-size: 1.125em;
 }
 .main-title p {
 	padding: 0;
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 1.5625em;
 }
 
 .section-one,
 .section-two,
 .section-three {
 	width: 100%;
-	height: auto;
 	border-top: 1px solid #eee;
-}
-
-.section-one h4 {
-	padding: 10px 0;
-}
-
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
-.section-two h4,
-.section-three h4 {
-	padding: 10px 30px;
 }
 
 .menu {
@@ -152,12 +135,12 @@ header nav ul li a{
 .reviews {
 	color: #333;
 	font-size: 1em;
-	line-height: 21px;
+	line-height: 1.3125em;
 }
 
 .address {
 	font-size: 1em;
-	line-height: 24px;
+	line-height: 1.5em;
 }
 
 /*The widths are in a percentage!*/
@@ -167,12 +150,55 @@ footer {
 	align-items: center;
 	height: auto;
 	border-top: 3px solid #eee;
-	margin: 0 auto;
-	text-align: center;
+	flex-flow: row wrap;
 }
 footer span {
 	font-family: 'Galada', cursive;
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: .875em;
+}
+
+/*****************TABLET STYLES ***************/
+@media all and (min-width:768px) {
+.bottom-section {
+		justify-content: space-between;
+		align-items: baseline;
+		border-top: 1px solid #eee;
+}
+
+.section-one, .section-two, .section-three {
+	 	flex-basis: 30%;
+		border-top: none;
+}
+
+.section-two {
+		border-left: 1px solid #eee;
+		border-right: 1px solid #eee;
+		padding: 0 20px;
+	}
+}
+
+/***************** DESKTOP STYLES ****************/
+@media all and (min-width:1200px) {
+header {
+		justify-content: space-between;
+}
+
+header h1 {
+		width: 30%;
+		padding: 0;
+		border-bottom: none;
+		text-align: left;
+}
+header nav {
+		width: 47%;
+}
+header nav ul {
+		display: flex;
+		justify-content: space-between;
+	}
+header nav ul li {
+		padding: 10px;
+ }
 }
